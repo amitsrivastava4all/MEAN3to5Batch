@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+<div data-ng-app="" >
+    <input type="text" placeholder="Enter your Name" data-ng-init="name='Amit'" data-ng-model="name">
+    <p>Your Name is <b>{{name}}</b></p>
+</div>
+</body>
+</html>
+        <!--AngularJS expressions are written inside double braces: {{ expression }}.
+
+            AngularJS expressions bind data to HTML the same way as the ng-bind directive.
+
+            AngularJS will "output" data exactly where the expression is written.-->

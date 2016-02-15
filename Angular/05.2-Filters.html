@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>More on Directives</title>
+    <script src="../js/angular.min.js"></script>
+    <script>
+        function mycontroller($scope){
+            console.log($scope);
+        }
+
+    </script>
+</head>
+<body ng-controller="mycontroller">
+<input type="text" ng-model="e.name" placeholder="Name wise Search">
+<input type="text" ng-model="any.$" placeholder="Enter Anything to Search">
+<br>
+<input type="text" ng-model="any.name" placeholder="Enter Name to Search">
+<br>
+<input type="text" ng-model="any.age" placeholder="Enter Age to Search">
+<br>
+<input type="text" ng-model="any.salary" placeholder="Enter Salary to Search">
+<div ng-init="employee = [
+  {name:'Amit', age:25, gender:'boy',salary:'9999'},
+  {name:'Kim', age:30, gender:'girl',salary:'2222'},
+  {name:'Tim', age:28, gender:'girl',salary:'3333'},
+  {name:'Vim', age:15, gender:'girl',salary:'4444'},
+  {name:'Rim', age:28, gender:'girl',salary:'5555'},
+  {name:'Tom', age:95, gender:'boy',salary:'6666'},
+  {name:'Ram', age:50, gender:'boy',salary:'7777'},
+  {name:'Ekta', age:27, gender:'girl',salary:'8888'},
+  {name:'Arnav', age:20, gender:'boy',salary:'9999'},
+  {name:'Mike', age:60, gender:'boy',salary:'10000'}
+]">
+    <table border="1">
+        <tr><th>Names</th><th>Age</th><th>Gender</th><th>Salary</th></tr>
+        <!--<tr ng-repeat="x in employee |filter:e">-->
+        <tr ng-repeat="x in employee | orderBy:'age'|filter:any">
+            <td>{{x.name|uppercase}}</td>
+            <td>{{x.age}}</td>
+            <td>{{x.gender}}</td>
+            <td>{{x.salary|currency:'&#x20B9'}}</td>
+        </tr>
+    </table>
+    </div>
+<!--&#x20B9 rupees symbol-->
+<!--http://character-code.com/currency-html-codes.php -->
+<!-- 'USD$' -->
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+<label>First Name:</label>
+<input type="text"  ng-model="fname" placeholder="Type First Name Here" maxlength="20" autocomplete="off">
+<br>
+<label>Last Name:</label>
+<input type="text"  ng-model="lname" placeholder="Type Last Name Here" maxlength="20" autocomplete="off">
+<br>
+<div >
+    Hello {{fname + " "+ lname}}<br>
+    {{2+2}}<br>
+    {{3*3}}<br>
+    {{400%99}}<br>
+    {{'Hello'+' '+"World"+"!!"}}<br>
+</div>
+
+<label>BootStrap Class Name:</label>
+<input type="text"  ng-model="myCssClass" placeholder="Type CSS Class Here" maxlength="20" autocomplete="off">
+
+<div class="{{myCssClass}}">
+    Wrapped inside a css Class
+</div>
+
+<input type="text"  ng-model="principal" placeholder="Type Principal Amount Here" maxlength="20" autocomplete="off">
+<input type="text"  ng-model="rate" placeholder="Type Rate Here" maxlength="20" autocomplete="off">
+<input type="text"  ng-model="time" placeholder="Type Time Here" maxlength="20" autocomplete="off">
+
+<!--TODO 1. Add HTML for Simple Interest Calculation -->
+
+<h2>Amount is {{(principal * rate * time) /100}}</h2>
+</body>
+</html>

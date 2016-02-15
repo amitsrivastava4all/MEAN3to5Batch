@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myapp" ng-controller="myctrl">
+    <input type="text" ng-model="firstName"/>
+    <input ng-model="secondName" type="text"/>
+    <button ng-click="showName()">Show Name</button>
+    Result is {{fullName}}
+
+</div>
+<script>
+    var app = angular.module("myapp",[]);
+    //var user= {};
+    function FullName(firstName,secondName){
+        this.firstName = firstName;
+        this.secondName = secondName;
+    }
+    app.factory("Myfactory",function(){
+
+        console.log("Factory Called "+user);
+        function displayName(user){
+            var result = user.firstName+" "+user.secondName;
+            return result;
+        }
+        return {"fullName":displayName};
+    });
+    app.controller("myctrl",function($scope,Myfactory){
+        $scope.showName=function(){
+        var user = new FullName($scope.firstName,$scope.secondName);
+        $scope.fullName = Myfactory.fullName(user);
+        }
+    });
+
+</script>
+</body>
+</html>

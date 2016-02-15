@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>More on Directives</title>
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+<div ng-init="names=['Amit','Mike','Tim','Ram']">
+<table border="1">
+    <tr><th>Names</th></tr>
+    <tr ng-repeat="x in names">
+        <td>{{x}}</td>
+    </tr>
+</table>
+</div>
+<br>
+<hr>
+<div ng-init="friends = [
+  {name:'Amit', age:25, gender:'boy'},
+  {name:'Kim', age:30, gender:'girl'},
+  {name:'Tim', age:28, gender:'girl'},
+  {name:'Vim', age:15, gender:'girl'},
+  {name:'Rim', age:28, gender:'girl'},
+  {name:'Tom', age:95, gender:'boy'},
+  {name:'Ram', age:50, gender:'boy'},
+  {name:'Ekta', age:27, gender:'girl'},
+  {name:'Arnav', age:20, gender:'boy'},
+  {name:'Mike', age:60, gender:'boy'}
+]">
+    <table border="1">
+        <tr><th>Names</th><th>Age</th><th>Gender</th></tr>
+        <tr ng-repeat="x in friends">
+            <td>{{x.name}}</td>
+            <td>{{x.age}}</td>
+            <td>{{x.gender}}</td>
+        </tr>
+    </table>
+    </div>
+</body>
+</html>
