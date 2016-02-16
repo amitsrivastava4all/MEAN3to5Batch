@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<meta charset="ISO-8859-1">
+<title>Filter Demo-Powered by TKHTS.COM</title>
+<script type="text/javascript" src="../js/angular.min.js"></script>
+<script type="text/javascript">
+function currentDateController($scope){
+$scope.today = new Date();
+	
+}
+
+
+</script>
+
+</head>
+<body>
+
+Name : {{"Ram Kumar"|uppercase}}</h2><br>
+Amount : {{123456789.6789213|number}}</h2><br>
+With Precision Limit Amount : {{12345.6789213|number:5}}</h2><br>
+Currency : {{12345.6789213|currency}}</h2><br>
+Currency : {{12345.6789213|currency:"Yen "}}</h2><br> <!-- For this opt locale angular for different currency symbols -->
+<div ng-controller="currentDateController">
+{{today}}
+<br>
+{{ today | date:'medium' }}           <!-- Aug 09, 2013 12:09:02 PM --> 
+<br>
+{{ today | date:'short' }}            <!-- 8/9/13 12:09 PM --> 
+<br>
+{{ today | date:'fullDate' }}         <!-- Thursday, August 09, 2013 -->
+<br> 
+{{ today | date:'longDate' }}         <!-- August 09, 2013 -->
+<br> 
+{{ today | date:'mediumDate' }} <!-- Aug 09, 2013 -->
+<br> 
+{{ today | date:'shortDate' }}        <!-- 8/9/13 -->
+<br> 
+{{ today | date:'mediumTime' }} <!-- 12:09:02 PM -->
+<br> 
+{{ today | date:'shortTime' }} <!-- 12:09 PM -->
+<br>
+<b>YearFormatting</b>
+<br>
+
+Four-digit year: {{ today | date:'yyyy' }} <!-- 2013 --> 
+<br>
+Two-digit padded year: {{ today | date:'yy' }} <!-- 13 --> 
+<br>
+One-digit year: {{ today | date:'y' }} <!-- 2013 --> 
+<br>
+<b>MonthFormatting</b> 
+<br>
+Month in year: {{ today | date:'MMMM' }} <!-- August -->
+<br> 
+Short month in year: {{ today | date:'MMM' }} <!-- Aug -->
+<br> 
+Padded month in year: {{ today | date:'MM' }} <!-- 08 -->
+<br> 
+Month in year: {{ today | date:'M' }} <!-- 8 --> 
+<br>
+<b>DayFormatting</b> 
+<br>
+Padded day in month: {{ today | date:'dd' }} <!-- 09 -->
+<br> 
+Day in month: {{ today | date:'d' }} <!-- 9 -->
+<br> 
+Day in week: {{ today | date:'EEEE' }} <!-- Thursday -->
+<br> 
+Short day in week: {{ today | date:'EEE' }} <!-- Thu --> 
+<br>
+<b>Hour Formatting</b>
+<br>
+Padded hour in day: {{ today | date:'HH' }} <!-- 00 -->
+<br> 
+Hour in day: {{ today | date:'H' }} <!-- 0 -->
+<br> 
+Padded hour in am/pm: {{ today | date:'hh' }} <!-- 12 -->
+<br> 
+Hour in am/pm: {{ today | date:'h' }} <!-- 12 --> 
+<br>
+<b>MinuteFormatting</b> 
+<br>
+Padded minute in hour: {{ today | date:'mm' }} <!-- 09 -->
+<br> 
+Minute in hour: {{ today | date:'m' }} <!-- 9 --> 
+<br>
+<b>SecondFormatting</b> 
+<br>
+Padded second in minute: {{ today | date:'ss' }} <!-- 02 -->
+<br> 
+Second in minute: {{ today | date:'s' }} <!-- 2 -->
+<br> 
+Padded millisecond in second: {{ today | date:'.sss' }} <!-- .995 --> 
+<br>
+<b>StringFormatting</b> 
+<br>
+am/pm character: {{ today | date:'a' }} <!-- AM -->
+<br> 
+4-digit representation of time zone offset: {{ today | date:'Z' }} <!-- -0700 --> 
+<br>
+<b>Some examples of custom date formatting:</b> 
+<br>
+{{ today | date:'MMM d, y' }} <!-- Aug 09, 2013 -->
+<br> 
+{{ today | date:'EEEE, d, M' }} <!-- Thursday, 9, 8 -->
+<br> 
+</div>
+</body>
+</html>

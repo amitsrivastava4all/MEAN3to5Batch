@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+
+<title>Filter With Controller Demo-Powered by TKHTS.COM</title>
+<script type="text/javascript" src="../js/angular.min.js"></script>
+<script type="text/javascript">
+function upperCaseController($scope,$filter){  // It is bad to use filter in controller, filter is for formatting and it has to be take care by view only
+    $scope.upperCase=function(){
+    $scope.myname = $filter('uppercase')($scope.myname);
+	alert($scope.myname);
+    }
+}
+</script>
+
+</head>
+<body>
+
+<div ng-controller="upperCaseController">
+<label>Name:</label>
+<input type="text" id="name" ng-model="myname" placeholder="Type Name Here" maxlength="20" autocomplete="off">
+<button ng-click="upperCase()">Ok</button>
+    <br>
+See both cases <h2>{{myname}}</h2>
+<br>
+<label>Output</label>
+<input type="text" value="{{myname}}">
+</div>
+</body>
+</html>

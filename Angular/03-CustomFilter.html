@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Clock Controller Inside Module-Powered by TKHTS.COM</title>
+    <!--<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>-->
+    <script src="../js/angular.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var moduleVar = angular.module("myModule", []);
+
+       moduleVar.filter('capitalize',function () {
+                    return function (input) {
+                        // input will be the string we pass in
+                        if (input)
+                            return input[0].toUpperCase() + input.slice(1);
+                    }
+                });
+        //****************************************** TBD **************************
+        /*moduleVar.filter("capitalize",function(input){
+
+            if(input){
+                return input[0].toUpperCase() + input.slice(1);
+            }
+
+        });*/
+
+
+    </script>
+</head>
+<body>
+
+<div ng-app="myModule">{{ 'angular js is awesome' | lowercase | capitalize}}
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<meta charset="ISO-8859-1">
+<title>Filter Demo-Powered by TKHTS.COM</title>
+<script type="text/javascript" src="../js/angular.min.js"></script>
+
+
+</head>
+<body>
+<label>Name:</label>
+<input type="text" id="name" ng-model="myname" placeholder="Type Name Here" maxlength="20" autocomplete="off">
+<br>
+<div id="displayNameDiv">
+lowercase filter <h2>{{myname | lowercase}}</h2>
+<br>
+<label>uppercase filter</label>
+{{myname | uppercase }}
+</div>
+</body>
+</html>
