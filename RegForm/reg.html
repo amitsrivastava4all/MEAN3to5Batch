@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="reg.js"></script>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<form id="form1" method="post" action="http://www.google.com" onsubmit="doValidation(event)">
+<label>Userid</label><input type="text"  id="userid"/><span id="usererror"></span>
+<label>Password</label><input type="text"  id="pwd"/><span id="pwderror"></span>
+    <input type="submit" value="Register"/>
+</form>
+</body>
+</html>
