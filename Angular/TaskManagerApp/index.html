@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/custom.css"/>
+    <script src="js/angular.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/task.js"></script>
+</head>
+<body ng-app="taskApp" ng-controller="taskController">
+<h1>Task Manager Application</h1>
+<table>
+    <tr>
+        <td><label>TaskName</label></td>
+        <td><input placeholder="Type TaskName" ng-model="taskName" type="text"/></td>
+    <tr>
+        <td><label>Task Description</label></td>
+        <td><textarea ng-model="taskDesc" placeholder="TaskDescription" cols="30" rows="5"></textarea></td>
+    </tr>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <table>
+                <tr>
+                    <td>
+                        <button ng-click="taskObject.addNewTask()">Add New Task</button>
+                    </td>
+                    <td>
+                        <button ng-click="taskObject.removeCompletedTask()">Delete Tasks</button>
+                    </td>
+                    <td>
+                        <button>Save Task</button>
+                    </td>
+                    <td>
+                        <button>Load Task</button>
+                    </td>
+                    <td>
+                        <input type="checkbox" ng-model="ticked" /> Tick to Show Search
+                        <div ng-show="ticked" >
+                            <input type="text" ng-model="searchbytaskname"/>
+                        </div>
+                    </td>
+                    <td>
+                        <input type="checkbox" ng-model="sortticked" /> Tick to Show Sort
+                        <div ng-show="sortticked" >
+                        <input type="checkbox" ng-model="orderByDescending">Sort Order
+                        <input type="text"  ng-model="orderby" placeholder="Type Sort By Field Name" />
+                            </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<h2>Task Completed :: {{taskObject.countCompletedTask()}} Task Pending :: {{taskObject.countPending()}}</h2>
+<ul >
+    <li ng-repeat="task in taskObject.taskList | filter:searchbytaskname | orderBy:orderby:orderByDescending" ng-click="task.toggle()" ng-class="{completed : task.isCompleted}">
+        {{task.name}} {{task.desc}}</li>
+</ul>
+</body>
+</html>
