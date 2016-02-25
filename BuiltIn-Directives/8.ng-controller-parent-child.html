@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <script src="../lib/angular/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-controller="SomeController">
+    {{ someBareValue }}
+    <button ng-click="someAction()">Communicate to child</button>
+    <div ng-controller="ChildController">
+        {{ someBareValue }}
+        <button ng-click="childAction()">Communicate to parent</button>
+    </div>
+</div>
+
+<script>
+    angular.module('myApp', [])
+            .controller('SomeController', function ($scope) {
+// anti-pattern, bare value
+                $scope.someBareValue = 'hello computer';
+// set actions on $scope itself, this is okay
+                $scope.someAction = function () {
+// sets {{ someBareValue }} inside SomeController and ChildController
+                    $scope.someBareValue = 'hello human, from parent';
+                };
+            })
+            .controller('ChildController', function ($scope) {
+                $scope.childAction = function () {
+// sets {{ someBareValue }} inside ChildController
+                    $scope.someBareValue = 'hello human, from child';
+                };
+            });
+</script>
+
+</body>
+</html>

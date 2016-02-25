@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+<script src="js/angular.min.js" type="text/javascript"></script>
+<script src="js/angular-route.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+
+    var app = angular.module('myApp', ['ngRoute']);
+
+    app.controller('AppCtrl', function ($scope, $routeParams) {
+        console.log($routeParams.country);
+        $scope.someVal = "Dynamic Values from Controller"
+    });
+
+    app.controller("paymentCtrl",function($scope,$routeParams){
+       $scope.data = "Payment Value "+$routeParams.amount;
+    });
+
+    app.config(function ($routeProvider) {
+        $routeProvider.when("/", {
+            templateUrl: 'home.html',
+            controller: 'AppCtrl'
+        }).when("/address/:country/:city/:pin", {
+            template: 'Contents of Personal Details Page '
+
+
+        })
+                .when("/payment/:amount", {
+                    templateUrl:'payment.html',
+                    controller:'paymentCtrl'
+                })
+                .when("/admin/payment", {
+                    template: 'Admin Page'
+                })
+                .when("/confirm", {
+                    template: 'Contents of Confirmation Page'
+                })
+                .otherwise({
+//                    template: 'Error Page, Not Found'
+                    redirectTo: "/"
+                })
+    });
+
+</script>
+
+
+<div ng-app="myApp">
+    <h1>this is Header</h1>
+    <ng-view></ng-view>
+    <h1>this is footer</h1>
+</div>
+</body>
+
+</html>
