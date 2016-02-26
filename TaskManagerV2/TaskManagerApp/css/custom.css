@@ -1,0 +1,7 @@
+.completed{
+    color: red;
+    text-decoration: line-through;
+}
+.hide{
+    display: none;
+}

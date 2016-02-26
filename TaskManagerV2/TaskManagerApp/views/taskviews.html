@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/custom.css"/>
+    <script src="../js/model/taskmodel.js"></script>
+    <script src="../js/model/taskOperations.js"></script>
+    <script src="../js/controller/taskcontroller.js"></script>
+
+</head>
+<body>
+<fieldset><legend>Tasks</legend>
+<div>
+    <table cellspacing="2">
+        <tr>
+            <td><label for="">TaskName</label>
+            <td><input id="taskName" placeholder="Type TaskName" type="text"/></td>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="">TaskDesc</label>
+            <td><textarea placeholder="Type TaskDesc" id="taskDesc" cols="20" rows="3"></textarea></td>
+            </td>
+        </tr>
+        <tr>
+            <table >
+                <tr>
+                    <td>
+                        <button id="addTask">Add</button>
+                    </td>
+                    <td>
+                        <button id="deleteTask">Delete</button>
+                    </td>
+                    <td>
+                        <input type="checkbox"  id="search"/>Search
+                        <div id="searchDiv" class="hide">
+                        <table><tr><td><input type="text" placeholder="Type TaskName to Search" id="taskSearch"/></td></tr></table>
+                        </div>
+                    </td>
+                    <td>
+                        <button>Sort</button>
+                    </td>
+                    <td>
+                        <button id="saveTask">Save</button>
+                    </td>
+                    <td>
+                        <button id="loadTask">Load</button>
+                    </td>
+                </tr>
+            </table>
+        </tr>
+    </table>
+</div>
+</fieldset>
+<fieldset>
+    <legend>TaskList</legend>
+    <ul id="taskList">
+
+    </ul>
+</fieldset>
+</body>
+</html>
