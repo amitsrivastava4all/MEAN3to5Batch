@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function display(){
+
+            var x = document.getElementById("txtName").value;
+            document.getElementById("msg").innerHTML="Welcome "+x;
+        }
+
+    </script>
+</head>
+<body>
+<h1 id="msg">Hello</h1>
+<input type="text" id="txtName" placeholder="Type Name Here"/>
+<button onclick="display()">Click Me</button>
+</body>
+</html>
