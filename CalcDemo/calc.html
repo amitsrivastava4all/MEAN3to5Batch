@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="model.js"></script>
+    <script src="controller.js"></script>
+</head>
+<body>
+<table >
+    <tr>
+        <td><label>FirstNo</label></td>
+        <td><input id="firstNo" placeholder="Type First No" type="text"/></td>
+
+    </tr>
+    <tr>
+        <td><label>SecondNo</label></td>
+        <td><input id="secondNo" placeholder="Type Second No" type="text"/></td>
+
+    </tr>
+    <tr>
+        <td colspan="2">
+            <table>
+                <tr>
+                    <td>
+                        <button id="add" data-operation="+">Add</button>
+                    </td>
+                    <td>
+                        <button id="subtract" data-operation="-">Subtract</button>
+                    </td>
+                    <td>
+                        <button>Multiply</button>
+                    </td>
+                    <td>
+                        <button>Divide</button>
+                    </td>
+                </tr>
+            </table></td>
+
+
+    </tr>
+</table>
+<h1>Result : <span id="result"></span></h1>
+</body>
+</html>
