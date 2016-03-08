@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="factory/factory.js"></script>
+    <script src="controller/controller.js"></script>
+</head>
+<body ng-app="calcapp" >
+<div ng-controller="calccontroller">
+<input type="text" ng-init="firstno=0" placeholder="Type First No" ng-model="firstno"/>
+<input type="text" ng-init="secondno=0" placeholder="Type Second No" ng-model="secondno"/>
+<h1 ng-bind="result"></h1>
+    <input type="text" value="{{result}}"/>
+<button ng-click="add()">Add</button>
+<button>Subtract</button>
+    <button ng-click="multiply()">Multiply</button>
+    </div>
+<div>
+
+</div>
+</body>
+</html>
