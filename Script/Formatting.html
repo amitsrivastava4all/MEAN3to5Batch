@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script type="text/babel">
+// Number Formatting
+    var i10nEN = new Intl.NumberFormat("en-US")
+var i10nDE = new Intl.NumberFormat("de-DE")
+console.log(i10nEN.format(1234567.89));
+
+// Currency Formatting
+var i10nUSD = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" })
+var i10nGBP = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" })
+var i10nEUR = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" })
+i10nUSD.format(100200300.40)
+
+// Date Time Formatting
+var i10nEN = new Intl.DateTimeFormat("en-US")
+var i10nDE = new Intl.DateTimeFormat("de-DE")
+i10nEN.format(new Date("2015-01-02"))
+    </script>
+</head>
+<body>
+
+</body>
+</html>

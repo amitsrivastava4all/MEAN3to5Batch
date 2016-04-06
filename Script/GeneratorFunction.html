@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script type="text/babel">
+/*
+Generators are a special kind of function that can be suspended and resumed.
+They have the yield operator which could be called a “resumable return”:
+it returns a value, but when the generator is resumed, execution doesn’t start fresh,
+ it continues after the yield.
+*/
+        function* test(){
+yield "Three";
+yield "Two";
+yield "One";
+}
+var x = test();
+x.next().value;
+    </script>
+</head>
+<body>
+
+</body>
+</html>

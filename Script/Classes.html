@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script type="text/babel">
+        class Point {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+            static staticMethod() {
+            return 'classy';
+            }
+            instanceMethod() {
+            return 'prototypical';
+        }
+            toString() {
+                return '(' + this.x + ', ' + this.y + ')';
+            }
+            get prop() {
+            return 'getter';
+        }
+        set prop(value) {
+            console.log('setter: '+value);
+        }
+        }
+
+        class ColorPoint extends Point {
+            constructor(x, y, color) {
+                super(x, y);
+                this.color = color;
+            }
+            toString() {
+                return super.toString() + ' in ' + this.color;
+            }
+        }
+
+        let cp = new ColorPoint(25, 8, 'green');
+        cp.toString(); // '(25, 8) in green'
+
+        console.log(cp instanceof ColorPoint); // true
+        console.log(cp instanceof Point); // true
+    </script>
+</head>
+<body>
+
+</body>
+</html>
