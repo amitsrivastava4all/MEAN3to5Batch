@@ -1,0 +1,10 @@
+.navbar-inner {
+  background:transparent;
+}
+.navbar {
+  background-color: transparent;
+  background: transparent;
+  border-color: transparent;
+}
+
+.navbar li { color: #000 }
